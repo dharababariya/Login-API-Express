@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dharadangariya/login-api#readme",
   "dependencies": {
+    "express": "^4.16.4",
     "nodemon": "^1.18.10"
   }
 }
