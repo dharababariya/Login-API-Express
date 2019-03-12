@@ -21,14 +21,15 @@ router.use(function (req,res, next){
 })
 
 router.post("/login", async function (req,res) 
+//check data store
+// {
+
+//     if(req.body === undefined) {
+
+//         console.log('True true');
+
+//     }
 {
-
-    if(req.body === undefined) {
-
-        console.log('True true');
-
-    }
-
     console.log(JSON.stringify(req.body));
     const result = await knex("dhara.login").insert({
         name:req.body.name,
@@ -37,6 +38,18 @@ router.post("/login", async function (req,res)
     })
     res.send(result);
     console.log(result);
+})
+
+router.post("/signup", async function(req,res){
+
+    console.log(JSON.stringify(req.body));
+    const result = await knex("dhara.reg").insert({
+        name:req.body.name,
+        address:req.body.address,
+        contact_no:req.body.contact_no,
+        email:req.body.email,
+        password:req.body.password
+    })
 })
     
 module.exports = router;
