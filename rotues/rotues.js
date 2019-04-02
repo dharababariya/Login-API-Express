@@ -1,15 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const knex = require('knex')({
-    client: 'pg',
-    version: '7.2',
-    connection: {
-      host : '127.0.0.1',
-      user : 'postgres',
-      password : 'postgres',
-      database : 'login'
-    }
-  });
+
    
 
 router.use(function (req,res, next){
